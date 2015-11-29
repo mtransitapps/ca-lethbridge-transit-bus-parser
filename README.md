@@ -1,2 +1,4 @@
-# ca-lethbridge-transit-bus-parser
+ca-lethbridge-transit-bus-parser
+================================
+
 Parser for Lethbridge Transit Bus data
