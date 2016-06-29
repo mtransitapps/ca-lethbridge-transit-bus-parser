@@ -154,12 +154,14 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				switch (rsn) {
 				// @formatter:off
 				case 12: return UNIVERSITY_DOWNTOWN;
+				case 23: return MAYOR_MAGRATH_SCENIC; // Counter Clockwise Loop
 				case 24: return MAYOR_MAGRATH_SCENIC; // Clockwise
 				case 31: return LEGACY_RDG_UPLANDS;
 				case 32: return INDIAN_BATTLE_COLUMBIA_BLVD; // Indian Battle Heights, Varsity Village
 				case 33: return HERITAGE_WEST_HIGHLANDS; // Ridgewood, Heritage, West Highlands
 				case 35: return COPPERWOOD; // Copperwood
 				case 36: return SUNRIDGE; // Sunridge, Riverstone, Mtn Hts
+				case 37: return "Garry Station"; //
 				// @formatter:on
 				}
 			}
@@ -210,45 +212,47 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 		return super.getRouteColor(gRoute);
 	}
 
-	private static final String STOP_11006 = "c29d7f36-9cdd-4b99-a51e-ec94e414bf3b";
-	private static final String STOP_11023 = "c9c28b82-b1a7-49d6-aacc-a18eea5df686";
-	private static final String STOP_11052 = "72ff623a-de78-4314-b382-77bc3fac801c";
-	private static final String STOP_11054 = "bd34718d-d1ea-41ec-a85a-5e7cc2790252";
-	private static final String STOP_11141 = "3f1aa0dd-6bd0-471a-8bc8-b417ab917331";
+	private static final String STOP_11006 = "8f8cb4e8-1419-435a-9257-32ac60b3fb02";
+	private static final String STOP_11023 = "8571441a-730e-4448-8864-f7dded9ee6d6";
+	private static final String STOP_11052 = "b67dc4a8-25bc-4cbd-8044-02f02f307de7";
+	private static final String STOP_11054 = "5c4f488b-e5a8-4677-b5b8-59a164ce8b8c";
+	private static final String STOP_11141 = "b83dee2b-34be-49a3-88f8-56e25eaf70fc";
 	private static final String STOP_11143 = "71f11896-7f1b-4f85-a782-4c2cdefca765";
-	private static final String STOP_11208 = "ec32169e-0999-464b-a23d-3e0a4944142c";
-	private static final String STOP_11262 = "86adc8ca-b457-4ea5-93c8-63a064506105";
-	private static final String STOP_11271 = "8752cdef-659a-46fc-9cfd-e985db92069e";
-	private static final String STOP_12009 = "2c1d9072-fbe6-439d-b743-fff26c24c393";
-	private static final String STOP_12010 = "ecc51f95-ca6d-42cf-b90d-8d16b31b3347";
-	private static final String STOP_12011 = "571269cf-d029-4bfe-97aa-a28bc5715116";
-	private static final String STOP_12020 = "9ce70779-2322-4f87-a28f-786751dd2207";
-	private static final String STOP_12034 = "688cb81a-7b4b-4335-8af8-dafb0bb05d7e";
-	private static final String STOP_12035 = "b2d6ab69-0aae-4647-90b2-bd5348f1299f";
-	private static final String STOP_12038 = "d4d680ee-1388-432c-8957-e5ab57f22f90";
-	private static final String STOP_12330 = "3bc6803a-9f5b-4049-8ebc-6cb345d412af";
-	private static final String STOP_13001 = "e8ed3065-2a31-4cce-8986-b07e3852799a";
-	private static final String STOP_13002 = "3f84cdce-cb26-439c-bda0-b647019bd0c6";
-	private static final String STOP_13004 = "e4b893f6-ab4a-4106-b9b4-b8d8d4936c1a";
-	private static final String STOP_13005 = "e03cfee3-b0fd-4077-95a8-ad2c475cd7d2";
-	private static final String STOP_13013 = "b7ddf5bc-21d0-4c12-a6d1-06a034864310";
-	private static final String STOP_13020 = "ea834c53-7ec9-43b3-8274-9dc799eb49d1";
-	private static final String STOP_13023 = "52fef153-8e21-4484-a775-8191864286ee";
-	private static final String STOP_13029 = "ce8771a7-4f53-4564-a44b-274f0cb33bb1";
-	private static final String STOP_13034 = "9b9e7bd8-fd5d-46ed-b805-d40f38ab1c2c";
-	private static final String STOP_13039 = "92cf785d-26eb-4fd7-97ad-a4be6a5941a1";
-	private static final String STOP_13043 = "1b4ef03e-1058-4f2f-aaff-3061f85428b9";
-	private static final String STOP_13068 = "563f7a32-df9f-4d43-9a0a-ac3a2965266f";
-	private static final String STOP_13303 = "7730cd28-cfe5-4d1f-bfb2-fd53e4d6a099";
-	private static final String STOP_13311 = "dda15d0e-c704-412f-ba88-d746d0f65891";
-	private static final String STOP_13503 = "3cd696e3-31b6-4fff-9e35-c0d94e6ca988";
-	private static final String STOP_13507 = "1e0149ee-f5b8-454b-871a-56fa1f73e411";
-	private static final String STOP_13517 = "c8dd4989-8665-4832-bef3-be662fece6c0";
-	private static final String STOP_14014 = "c0e36ad0-b668-472c-ba4c-27195c9bc8f0";
-	private static final String STOP_14016 = "03cd648a-156e-4a49-a7d3-d6fd17604ad5";
-	private static final String STOP_14034 = "68851b86-14db-4571-8e42-4158eb2db6a2";
-	private static final String STOP_MESC1 = "81fad63a-7df9-478f-9f30-552220298430";
-	private static final String STOP_MESC2 = "a5af132d-e7c7-44af-a9c1-8fc220dfa9c2";
+	private static final String STOP_11208 = "100f6f4c-1740-4109-bed4-fac770016af1";
+	private static final String STOP_11262 = "0bd46508-4c56-4c4b-9151-e1ce73f4ab88";
+	private static final String STOP_11271 = "73f99553-6fde-41db-9d63-c633fc4e1ba9";
+	private static final String STOP_12009 = "060b3951-10d5-40ae-b1a0-9bb7383a0f30";
+	private static final String STOP_12010 = "aacff3d5-cedc-4da8-96ec-c79f36a2166d";
+	private static final String STOP_12011 = "7400b4b8-6d55-46ee-9694-5acbcc292c0c";
+	private static final String STOP_12020 = "a2058662-a49b-453d-a5ed-de18e5b5f1aa";
+	private static final String STOP_12034 = "82ddf3b1-c120-4ffc-b221-674ecc6be33d";
+	private static final String STOP_12035 = "ab13b9e1-07f0-43d9-8da0-c44d30a44f7a";
+	private static final String STOP_12038 = "00f07baf-c80d-4997-8f79-025280c06ce1";
+	private static final String STOP_12330 = "9e8bf681-a0b9-417a-bba7-8a2530c94ef7";
+	private static final String STOP_13001 = "93e46ba5-627d-4fc1-a87e-14540af091bf";
+	private static final String STOP_13002 = "4598db1b-0273-45de-b8cc-d3ae2626a73a";
+	private static final String STOP_13004 = "f70c616a-b669-4cc2-b123-722d1d175042";
+	private static final String STOP_13005 = "2fbf4d2e-9d60-4ef9-bf89-d2e1090c9b8d";
+	private static final String STOP_13013 = "8205b720-d462-42ca-81cd-efc3f0c07e66";
+	private static final String STOP_13020 = "1267f46e-d6ee-4f86-9d17-7b5ea69861b3";
+	private static final String STOP_13023 = "7aaf4c66-2c54-4f05-b333-d749bfe7d394";
+	private static final String STOP_13029 = "e7442b80-3068-43ff-a606-5d0fa08a3c57";
+	private static final String STOP_13034 = "5d20b41e-5605-42c0-86b2-852d4c50e30b";
+	private static final String STOP_13039 = "7fe35d39-2b4b-48bf-a042-2d11eb3ffdba";
+	private static final String STOP_13043 = "ae7fa6b3-9451-46d9-a42f-c63b8dbbecf4";
+	private static final String STOP_13068 = "48777031-b28e-4cc8-b4e8-cddb29cff3c8";
+	private static final String STOP_13303 = "345aa195-461d-4be6-8011-c9c9a9d02f64";
+	private static final String STOP_13311 = "925437ad-5c27-40b7-a7f8-ac1dc6254f85";
+	private static final String STOP_13503 = "53eed5e7-2dd8-4ca5-9c99-97816fdf9aba";
+	private static final String STOP_13507 = "1330661e-b50b-4bc5-997f-684767c4a7ae";
+	private static final String STOP_13517 = "6cc3977a-c79d-49b1-a653-ee2b9219c200";
+	private static final String STOP_14014 = "6c06783c-2b7f-4113-a039-48c3a24ae773";
+	private static final String STOP_14016 = "012cf9c1-9102-488e-8858-3131bc98db0d";
+	private static final String STOP_14034 = "19e7f2fb-445c-474f-a9d9-54ea0393aac9";
+	private static final String STOP_MESC1 = "d427ab43-1007-4182-b7ba-a8f81cbcddd5";
+	private static final String STOP_MESC2 = "b15bf429-37b6-42f2-8faf-6e0807cc639d";
+	// private static final String STOP_MESC3 = "64b8a95f-e8f7-44b1-85db-3946744cbd16";
+	private static final String STOP_MESC4 = "eab61b92-af2d-4c07-86a4-306b89164fff";
 
 	private static HashMap<Long, RouteTripSpec> ALL_ROUTE_TRIPS2;
 	static {
@@ -266,10 +270,29 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, CITY_CTR) //
 				.addTripSort(MDirectionType.EAST.intValue(), //
 						Arrays.asList(new String[] { //
-						STOP_14016, STOP_14034, STOP_12038, STOP_12020, STOP_12011, STOP_12010, STOP_12330, STOP_11271 })) //
+						STOP_14016, // ==
+								STOP_14034, // !=
+								STOP_12038, // ==
+								STOP_12020, //
+								STOP_12011, // !=
+								STOP_12010, // ==
+								STOP_12330, // !=
+								STOP_MESC1, //
+								STOP_11271 //
+						})) //
 				.addTripSort(MDirectionType.WEST.intValue(), //
 						Arrays.asList(new String[] { //
-						STOP_11271, STOP_11054, STOP_12010, STOP_12009, STOP_12034, STOP_MESC1, STOP_MESC2, STOP_12035, STOP_14014 })) //
+						STOP_11271, //
+								STOP_11054, // !=
+								STOP_12010, // ==
+								STOP_12009, // !=
+								STOP_12034, //
+								// STOP_MESC1, //
+								STOP_MESC2, //
+								STOP_MESC4, //
+								STOP_12035, //
+								STOP_14014 //
+						})) //
 				.compileBothTripSort());
 		map2.put(31l, new RouteTripSpec(31l, //
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, NORTH_TERMINAL, //
@@ -288,12 +311,12 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 						Arrays.asList(new String[] { STOP_13001, STOP_13029, STOP_13034 })) //
 				.compileBothTripSort());
 		map2.put(33l, new RouteTripSpec(33l, //
-				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, HERITAGE, // "West Highlands"
+				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, HERITAGE, // "West Highlands", //
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, UNIVERSITY) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
-						Arrays.asList(new String[] { STOP_13002, STOP_13013, STOP_13020 })) //
+						Arrays.asList(new String[] { STOP_13002, "92d5a30e-ceee-4eea-8d3f-5fab36f9ec42", STOP_13013, STOP_13020 })) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
-						Arrays.asList(new String[] { STOP_13020, STOP_13023, STOP_13002 })) //
+						Arrays.asList(new String[] { STOP_13020, STOP_13023, "0819bac5-24ce-44b7-b870-7493f18193d3", STOP_13002 })) //
 				.compileBothTripSort());
 		map2.put(35l, new RouteTripSpec(35l, //
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, UNIVERSITY, //
