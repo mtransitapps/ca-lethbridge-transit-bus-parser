@@ -233,6 +233,7 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 	private static final String STOP_13002 = "4598db1b-0273-45de-b8cc-d3ae2626a73a";
 	private static final String STOP_13004 = "f70c616a-b669-4cc2-b123-722d1d175042";
 	private static final String STOP_13005 = "2fbf4d2e-9d60-4ef9-bf89-d2e1090c9b8d";
+	private static final String STOP_13010 = "9ef2cc6a-7462-40c9-a18d-615adc3ef4d2";
 	private static final String STOP_13013 = "8205b720-d462-42ca-81cd-efc3f0c07e66";
 	private static final String STOP_13020 = "1267f46e-d6ee-4f86-9d17-7b5ea69861b3";
 	private static final String STOP_13023 = "7aaf4c66-2c54-4f05-b333-d749bfe7d394";
@@ -246,12 +247,13 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 	private static final String STOP_13503 = "53eed5e7-2dd8-4ca5-9c99-97816fdf9aba";
 	private static final String STOP_13507 = "1330661e-b50b-4bc5-997f-684767c4a7ae";
 	private static final String STOP_13517 = "6cc3977a-c79d-49b1-a653-ee2b9219c200";
+	private static final String STOP_13524 = "5e9e3323-ad5a-47c1-8d92-6a8bbb136cea";
 	private static final String STOP_14014 = "6c06783c-2b7f-4113-a039-48c3a24ae773";
 	private static final String STOP_14016 = "012cf9c1-9102-488e-8858-3131bc98db0d";
 	private static final String STOP_14034 = "19e7f2fb-445c-474f-a9d9-54ea0393aac9";
 	private static final String STOP_MESC1 = "d427ab43-1007-4182-b7ba-a8f81cbcddd5";
 	private static final String STOP_MESC2 = "b15bf429-37b6-42f2-8faf-6e0807cc639d";
-	// private static final String STOP_MESC3 = "64b8a95f-e8f7-44b1-85db-3946744cbd16";
+	private static final String STOP_MESC3 = "64b8a95f-e8f7-44b1-85db-3946744cbd16";
 	private static final String STOP_MESC4 = "eab61b92-af2d-4c07-86a4-306b89164fff";
 
 	private static HashMap<Long, RouteTripSpec> ALL_ROUTE_TRIPS2;
@@ -333,6 +335,14 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 						Arrays.asList(new String[] { STOP_13507, STOP_13517, STOP_13004 })) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
 						Arrays.asList(new String[] { STOP_13004, STOP_13503, STOP_13507 })) //
+				.compileBothTripSort());
+		map2.put(37l, new RouteTripSpec(37l, //
+				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, UNIVERSITY, //
+				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, "Garry Sta") //
+				.addTripSort(MDirectionType.NORTH.intValue(), //
+						Arrays.asList(new String[] { STOP_13524, STOP_MESC3, STOP_13004 })) //
+				.addTripSort(MDirectionType.SOUTH.intValue(), //
+						Arrays.asList(new String[] { STOP_13004, STOP_13010, STOP_13524 })) //
 				.compileBothTripSort());
 		ALL_ROUTE_TRIPS2 = map2;
 	}
