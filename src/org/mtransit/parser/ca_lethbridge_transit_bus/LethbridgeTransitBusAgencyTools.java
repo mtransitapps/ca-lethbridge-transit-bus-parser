@@ -233,6 +233,7 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 	private static final String STOP_13002 = "4598db1b-0273-45de-b8cc-d3ae2626a73a";
 	private static final String STOP_13004 = "f70c616a-b669-4cc2-b123-722d1d175042";
 	private static final String STOP_13005 = "2fbf4d2e-9d60-4ef9-bf89-d2e1090c9b8d";
+	private static final String STOP_13006 = "92d5a30e-ceee-4eea-8d3f-5fab36f9ec42";
 	private static final String STOP_13010 = "9ef2cc6a-7462-40c9-a18d-615adc3ef4d2";
 	private static final String STOP_13013 = "8205b720-d462-42ca-81cd-efc3f0c07e66";
 	private static final String STOP_13020 = "1267f46e-d6ee-4f86-9d17-7b5ea69861b3";
@@ -241,6 +242,7 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 	private static final String STOP_13034 = "5d20b41e-5605-42c0-86b2-852d4c50e30b";
 	private static final String STOP_13039 = "7fe35d39-2b4b-48bf-a042-2d11eb3ffdba";
 	private static final String STOP_13043 = "ae7fa6b3-9451-46d9-a42f-c63b8dbbecf4";
+	private static final String STOP_13061 = "0819bac5-24ce-44b7-b870-7493f18193d3";
 	private static final String STOP_13068 = "48777031-b28e-4cc8-b4e8-cddb29cff3c8";
 	private static final String STOP_13303 = "345aa195-461d-4be6-8011-c9c9a9d02f64";
 	private static final String STOP_13311 = "925437ad-5c27-40b7-a7f8-ac1dc6254f85";
@@ -316,9 +318,9 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, HERITAGE, // "West Highlands", //
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, UNIVERSITY) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
-						Arrays.asList(new String[] { STOP_13002, "92d5a30e-ceee-4eea-8d3f-5fab36f9ec42", STOP_13013, STOP_13020 })) //
+						Arrays.asList(new String[] { STOP_13002, STOP_13006, STOP_13013, STOP_13020 })) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
-						Arrays.asList(new String[] { STOP_13020, STOP_13023, "0819bac5-24ce-44b7-b870-7493f18193d3", STOP_13002 })) //
+						Arrays.asList(new String[] { STOP_13020, STOP_13023, STOP_13061, STOP_13002 })) //
 				.compileBothTripSort());
 		map2.put(35l, new RouteTripSpec(35l, //
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, UNIVERSITY, //
