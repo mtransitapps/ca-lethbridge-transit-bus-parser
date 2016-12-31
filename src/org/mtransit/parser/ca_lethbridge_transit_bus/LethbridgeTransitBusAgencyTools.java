@@ -212,51 +212,51 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 		return super.getRouteColor(gRoute);
 	}
 
-	private static final String STOP_11006 = "8f8cb4e8-1419-435a-9257-32ac60b3fb02";
-	private static final String STOP_11023 = "8571441a-730e-4448-8864-f7dded9ee6d6";
-	private static final String STOP_11052 = "b67dc4a8-25bc-4cbd-8044-02f02f307de7";
-	private static final String STOP_11054 = "5c4f488b-e5a8-4677-b5b8-59a164ce8b8c";
-	private static final String STOP_11141 = "b83dee2b-34be-49a3-88f8-56e25eaf70fc";
-	private static final String STOP_11143 = "71f11896-7f1b-4f85-a782-4c2cdefca765";
-	private static final String STOP_11208 = "100f6f4c-1740-4109-bed4-fac770016af1";
-	private static final String STOP_11262 = "0bd46508-4c56-4c4b-9151-e1ce73f4ab88";
-	private static final String STOP_11271 = "73f99553-6fde-41db-9d63-c633fc4e1ba9";
-	private static final String STOP_12009 = "060b3951-10d5-40ae-b1a0-9bb7383a0f30";
-	private static final String STOP_12010 = "aacff3d5-cedc-4da8-96ec-c79f36a2166d";
-	private static final String STOP_12011 = "7400b4b8-6d55-46ee-9694-5acbcc292c0c";
-	private static final String STOP_12020 = "a2058662-a49b-453d-a5ed-de18e5b5f1aa";
-	private static final String STOP_12034 = "82ddf3b1-c120-4ffc-b221-674ecc6be33d";
-	private static final String STOP_12035 = "ab13b9e1-07f0-43d9-8da0-c44d30a44f7a";
-	private static final String STOP_12038 = "00f07baf-c80d-4997-8f79-025280c06ce1";
-	private static final String STOP_12330 = "9e8bf681-a0b9-417a-bba7-8a2530c94ef7";
-	private static final String STOP_13001 = "93e46ba5-627d-4fc1-a87e-14540af091bf";
-	private static final String STOP_13002 = "4598db1b-0273-45de-b8cc-d3ae2626a73a";
-	private static final String STOP_13004 = "f70c616a-b669-4cc2-b123-722d1d175042";
-	private static final String STOP_13005 = "2fbf4d2e-9d60-4ef9-bf89-d2e1090c9b8d";
-	private static final String STOP_13006 = "92d5a30e-ceee-4eea-8d3f-5fab36f9ec42";
-	private static final String STOP_13010 = "9ef2cc6a-7462-40c9-a18d-615adc3ef4d2";
-	private static final String STOP_13013 = "8205b720-d462-42ca-81cd-efc3f0c07e66";
-	private static final String STOP_13020 = "1267f46e-d6ee-4f86-9d17-7b5ea69861b3";
-	private static final String STOP_13023 = "7aaf4c66-2c54-4f05-b333-d749bfe7d394";
-	private static final String STOP_13029 = "e7442b80-3068-43ff-a606-5d0fa08a3c57";
-	private static final String STOP_13034 = "5d20b41e-5605-42c0-86b2-852d4c50e30b";
-	private static final String STOP_13039 = "7fe35d39-2b4b-48bf-a042-2d11eb3ffdba";
-	private static final String STOP_13043 = "ae7fa6b3-9451-46d9-a42f-c63b8dbbecf4";
-	private static final String STOP_13061 = "0819bac5-24ce-44b7-b870-7493f18193d3";
-	private static final String STOP_13068 = "48777031-b28e-4cc8-b4e8-cddb29cff3c8";
-	private static final String STOP_13303 = "345aa195-461d-4be6-8011-c9c9a9d02f64";
-	private static final String STOP_13311 = "925437ad-5c27-40b7-a7f8-ac1dc6254f85";
-	private static final String STOP_13503 = "53eed5e7-2dd8-4ca5-9c99-97816fdf9aba";
-	private static final String STOP_13507 = "1330661e-b50b-4bc5-997f-684767c4a7ae";
-	private static final String STOP_13517 = "6cc3977a-c79d-49b1-a653-ee2b9219c200";
-	private static final String STOP_13524 = "5e9e3323-ad5a-47c1-8d92-6a8bbb136cea";
-	private static final String STOP_14014 = "6c06783c-2b7f-4113-a039-48c3a24ae773";
-	private static final String STOP_14016 = "012cf9c1-9102-488e-8858-3131bc98db0d";
-	private static final String STOP_14034 = "19e7f2fb-445c-474f-a9d9-54ea0393aac9";
-	private static final String STOP_MESC1 = "d427ab43-1007-4182-b7ba-a8f81cbcddd5";
-	private static final String STOP_MESC2 = "b15bf429-37b6-42f2-8faf-6e0807cc639d";
-	private static final String STOP_MESC3 = "64b8a95f-e8f7-44b1-85db-3946744cbd16";
-	private static final String STOP_MESC4 = "eab61b92-af2d-4c07-86a4-306b89164fff";
+	private static final String STOP_11006 = "3b1041d9-46c8-4c3e-b0b5-8f2973e7067f"; // 13 ST N & 41 AVE N
+	private static final String STOP_11023 = "4823a099-6de2-4013-9a2e-4f4c6be6a3b8"; // KODIAK BLVD N & KODIAK PL N
+	private static final String STOP_11052 = "4091700d-2975-4e28-ba42-76b099c7ed45"; // North Terminal
+	private static final String STOP_11054 = "29c3f451-918a-407e-8fb0-156aa3ac00fe"; // 36 ST S & CROWSNEST HWY
+	private static final String STOP_11141 = "990ff628-2d5c-4e26-b31f-bc3ea7303682"; // 13 ST N & 4 AVE N
+	private static final String STOP_11143 = "bd1f2a3c-18c7-4560-b491-d65f14d1ab08"; // 13 ST N & 2 AVE N
+	private static final String STOP_11208 = "c6d427eb-9174-49a1-9d93-aeb5fbd4152b"; // 12 AVE N & 19 ST N
+	private static final String STOP_11262 = "417cadb5-0e4a-4d8e-a441-029b8097af7e"; // GIFFEN RD N & 36 ST N
+	private static final String STOP_11267 = "808a0a9f-9fb9-44d6-9055-620527f1e115"; // 39 ST N & 14 AVE N
+	private static final String STOP_11268 = "2c6e09bb-0f6f-47ff-aad4-2aaee574751d"; // 36 ST N & 14 AVE N
+	private static final String STOP_11271 = "eb1b46ef-b948-4014-9c90-3ad320ebe69d"; // 14 AVE N & 39 ST N
+	private static final String STOP_12009 = "89476510-88dc-4eee-989a-675301f90f6b"; // 28 ST S & 3 AVE S
+	private static final String STOP_12010 = "6b3e17f5-468f-4db6-bb20-205a4b25522a"; // Transfer Point
+	private static final String STOP_12011 = "96423986-0e1c-4ced-9f39-6d50ba9df1e5"; // LEASIDE AVE S & 2 AVE S
+	private static final String STOP_12034 = "78232a7d-cc1d-4e3c-846d-cd3c79503fb8"; // 6 AVE S & 15 ST S
+	private static final String STOP_12035 = "12b92405-7295-4879-9f4f-d1e32389d736"; // 6 Ave & 13 St S
+	private static final String STOP_12038 = "831608ea-40ae-47e2-89bd-3dd62c26f431"; // 4 AVE S & 10 ST S
+	private static final String STOP_12330 = "e2845963-1af1-49c7-8a7d-17fd2169c92a"; // 1 AVE S & 32 ST S
+	private static final String STOP_13001 = "a4f2726f-4d71-46bb-8293-19b68f0346e5"; // University Terminal
+	private static final String STOP_13002 = "b829138b-5aad-4776-8166-4f6b687630ee"; // University Terminal
+	private static final String STOP_13004 = "50fbc070-7c47-4a50-bd0c-100e35e8d2ec"; // University Terminal
+	private static final String STOP_13005 = "8e117892-4bf8-4803-b69a-510ba526019e"; // University Terminal
+	private static final String STOP_13006 = "0e22d042-61fd-4dd3-9a75-ffe179bbac9c"; // Aperture Drive W
+	private static final String STOP_13010 = "803bc9f6-ddfc-4dbd-b570-648283e4da23"; // University Dr W & Edgewood Blvd W
+	private static final String STOP_13013 = "cea11d78-297d-4323-8088-50a4cf8e2d29"; // HERITAGE BLVD W & HERITAGE CL W
+	private static final String STOP_13020 = "44951d0d-f5d2-4070-9454-83112a34e65c"; // HERITAGE BLVD & HERITAGE HEIGHTS PLAZA W
+	private static final String STOP_13023 = "9cc047b8-e1c0-401b-887b-e500bd0cd2cc"; // HIGHLANDS BLVD W & ANGUS RD W
+	private static final String STOP_13029 = "8e7cb21d-69ab-464e-b4b7-88aabde02355"; // RED CROW BLVD W & IROQUOIS CRES W
+	private static final String STOP_13034 = "8b8a925a-9c60-4604-9ca0-a6238f403217"; // RED CROW BLVD W & JERRY POTTS BLVD W
+	private static final String STOP_13039 = "ff88632a-218e-41ff-83cd-dc853a1d9f5c"; // RED CROW BLVD W & JERRY POTTS BLVD W
+	private static final String STOP_13043 = "7c272bbc-0c70-4811-9bf8-16a7d81dc51e"; // COLUMBIA BLVD W & MODESTO RD W
+	private static final String STOP_13061 = "b85adc85-ab66-417e-b009-a3ee9db10a90"; // UNIVERSITY DR W & COLUMBIA BLVD W
+	private static final String STOP_13068 = "4ad38f45-79c3-48d3-b530-1bde2af9df59"; // COLUMBIA BLVD W & SIMON FRASER BLVD W
+	private static final String STOP_13303 = "e80a149d-c250-4d0b-ad11-472d680c21ab"; // SILKSTONE RD W & SILKSTONE CRES W
+	private static final String STOP_13311 = "341b4af2-1fe2-493e-83c3-7d8d5170c262"; // BRITANNIA BLVD W & AQUITANIA BLVD W
+	private static final String STOP_13503 = "c6d3b3b3-4a23-4a2a-9289-a5f45cb62a2e"; // UNIVERSITY DR W & ROCKY MOUNTAIN BLVD WC
+	private static final String STOP_13507 = "9ebfdcc6-650d-4d26-8240-63b36842c938"; // MT SUNDANCE RD W & MT SUNDIAL CRT W
+	private static final String STOP_13517 = "c9a39dac-e10f-41cd-80d3-d98f3bf0200c"; // RIVERSTONE BLVD W
+	private static final String STOP_13524 = "cbffbf8b-3b0d-4cb0-883b-4821ef2eabd9"; // Garry Station Prt W & Garry Dr W
+	private static final String STOP_13450 = "45d0ae66-3b64-48ba-9b03-d282dfe1ecd9"; // GARRY DR W & SQUAMISH BLVD W
+	private static final String STOP_14014 = "30461940-01b6-49e7-b087-0e9e980de6ca"; // City Center Terminal
+	private static final String STOP_14016 = "fa70fca0-26eb-465c-8327-f09f30143245"; // City Center Terminal
+	private static final String STOP_14034 = "10ec7bc6-1868-4b77-958e-090fda40c582"; // 4 Ave & 8 St S
+	private static final String STOP_MESC2 = "507a74b8-e621-4953-ae84-6ea351fa25bf"; // 6 AVE & 13 ST S
+	private static final String STOP_MESC3 = "fc844a65-fc34-493b-bcc5-298fb78c2eea"; // 6 AVE & 13 ST S
 
 	private static HashMap<Long, RouteTripSpec> ALL_ROUTE_TRIPS2;
 	static {
@@ -274,37 +274,44 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, CITY_CTR) //
 				.addTripSort(MDirectionType.EAST.intValue(), //
 						Arrays.asList(new String[] { //
-						STOP_14016, // ==
+						STOP_14016, // == City Center Terminal
 								STOP_14034, // !=
 								STOP_12038, // ==
-								STOP_12020, //
 								STOP_12011, // !=
-								STOP_12010, // ==
+								STOP_12010, // == Transfer Point
 								STOP_12330, // !=
-								STOP_MESC1, //
-								STOP_11271 //
+								STOP_11267, // !=
+								STOP_11271 // 14 AVE N & 39 ST N
 						})) //
 				.addTripSort(MDirectionType.WEST.intValue(), //
 						Arrays.asList(new String[] { //
-						STOP_11271, //
+						STOP_11271, // 14 AVE N & 39 ST N
+								STOP_11268, // !=
 								STOP_11054, // !=
-								STOP_12010, // ==
+								STOP_12010, // == Transfer Point
 								STOP_12009, // !=
-								STOP_12034, //
-								// STOP_MESC1, //
-								STOP_MESC2, //
-								STOP_MESC4, //
-								STOP_12035, //
-								STOP_14014 //
+								STOP_12034, // ==
+								STOP_MESC2, // !=
+								STOP_MESC3, // !=
+								STOP_12035, // ==
+								STOP_14014 // City Center Terminal
 						})) //
 				.compileBothTripSort());
 		map2.put(31l, new RouteTripSpec(31l, //
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, NORTH_TERMINAL, //
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, INDUSTRIAL) //
 				.addTripSort(MDirectionType.EAST.intValue(), //
-						Arrays.asList(new String[] { STOP_11262, STOP_11023, STOP_11052 })) //
+						Arrays.asList(new String[] { //
+						STOP_11262, //
+								STOP_11023, //
+								STOP_11052 // North Terminal
+						})) //
 				.addTripSort(MDirectionType.WEST.intValue(), //
-						Arrays.asList(new String[] { STOP_11052, STOP_11006, STOP_11262 })) //
+						Arrays.asList(new String[] { //
+						STOP_11052, // North Terminal
+								STOP_11006, //
+								STOP_11262 //
+						})) //
 				.compileBothTripSort());
 		map2.put(32l, new RouteTripSpec(32l, //
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, UNIVERSITY, //
@@ -334,17 +341,33 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, UNIVERSITY, //
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, SUNRIDGE) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
-						Arrays.asList(new String[] { STOP_13507, STOP_13517, STOP_13004 })) //
+						Arrays.asList(new String[] { //
+						STOP_13507, //
+								STOP_13517, //
+								STOP_13004 // University Terminal
+						})) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
-						Arrays.asList(new String[] { STOP_13004, STOP_13503, STOP_13507 })) //
+						Arrays.asList(new String[] { //
+						STOP_13004, // University Terminal
+								STOP_13503, //
+								STOP_13507 //
+						})) //
 				.compileBothTripSort());
 		map2.put(37l, new RouteTripSpec(37l, //
 				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, UNIVERSITY, //
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, "Garry Sta") //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
-						Arrays.asList(new String[] { STOP_13524, STOP_MESC3, STOP_13004 })) //
+						Arrays.asList(new String[] { //
+						STOP_13524, // Garry Station Prt W & Garry Dr W
+								STOP_13450, // GARRY DR W & SQUAMISH BLVD W
+								STOP_13004 // University Terminal
+						})) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
-						Arrays.asList(new String[] { STOP_13004, STOP_13010, STOP_13524 })) //
+						Arrays.asList(new String[] { //
+						STOP_13004, // University Terminal
+								STOP_13010, // University Dr W & Edgewood Blvd W
+								STOP_13524 // Garry Station Prt W & Garry Dr W
+						})) //
 				.compileBothTripSort());
 		ALL_ROUTE_TRIPS2 = map2;
 	}
