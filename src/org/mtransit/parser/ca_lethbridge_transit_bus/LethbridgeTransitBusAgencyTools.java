@@ -100,8 +100,8 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 	private static final String N = "n";
 	private static final String S = "s";
 
-	private static final long RID_STARTS_WITH_N = 140000l;
-	private static final long RID_STARTS_WITH_S = 190000l;
+	private static final long RID_STARTS_WITH_N = 140_000L;
+	private static final long RID_STARTS_WITH_S = 190_000L;
 
 	@Override
 	public long getRouteId(GRoute gRoute) {
@@ -124,34 +124,6 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 
 	private static final String SLASH = " / ";
 
-	private static final String CITY_CTR = "City Ctr";
-	private static final String COLUMBIA_BLVD = "Columbia Blvd";
-	private static final String COPPERWOOD = "Copperwood";
-	private static final String CROSSINGS = "Crossings";
-	private static final String DOWNTOWN = "Downtown";
-	private static final String HENDERSON_LK = "Henderson Lk";
-	private static final String HERITAGE = "Heritage";
-	private static final String INDIAN_BATTLE = "Indian Battle";
-	private static final String INDUSTRIAL = "Industrial";
-	private static final String LEGACY_RDG = "Legacy Rdg";
-	private static final String MAYOR_MAGRATH = "Mayor Magrath";
-	private static final String NORD_BRIDGE = "Nord-Bridge";
-	private static final String NORTH_TERMINAL = "North Terminal";
-	private static final String SCENIC = "Scenic";
-	private static final String SOUTH_ENMAX = "South Enmax";
-	private static final String SOUTH_GATE = "South Gate";
-	private static final String SUNRIDGE = "Sunridge";
-	private static final String UNIVERSITY = "University";
-	private static final String UPLANDS = "Uplands";
-	private static final String WEST_HIGHLANDS = "West Highlands";
-	//
-	private static final String HENDERSON_LK_INDUSTRIAL = HENDERSON_LK + SLASH + INDUSTRIAL;
-	private static final String HERITAGE_WEST_HIGHLANDS = HERITAGE + SLASH + WEST_HIGHLANDS;
-	private static final String INDIAN_BATTLE_COLUMBIA_BLVD = INDIAN_BATTLE + SLASH + COLUMBIA_BLVD;
-	private static final String LEGACY_RDG_UPLANDS = LEGACY_RDG + SLASH + UPLANDS;
-	private static final String MAYOR_MAGRATH_SCENIC = MAYOR_MAGRATH + SLASH + SCENIC;
-	private static final String UNIVERSITY_DOWNTOWN = UNIVERSITY + SLASH + DOWNTOWN;
-
 	@Override
 	public String getRouteLongName(GRoute gRoute) {
 		String routeLongName = gRoute.getRouteLongName();
@@ -163,30 +135,30 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				int rsn = Integer.parseInt(gRoute.getRouteShortName());
 				switch (rsn) {
 				// @formatter:off
-				case 12: return UNIVERSITY_DOWNTOWN;
-				case 23: return MAYOR_MAGRATH_SCENIC; // Counter Clockwise Loop
-				case 24: return MAYOR_MAGRATH_SCENIC; // Clockwise
-				case 31: return LEGACY_RDG_UPLANDS;
-				case 32: return INDIAN_BATTLE_COLUMBIA_BLVD; // Indian Battle Heights, Varsity Village
-				case 33: return HERITAGE_WEST_HIGHLANDS; // Ridgewood, Heritage, West Highlands
-				case 35: return COPPERWOOD; // Copperwood
-				case 36: return SUNRIDGE; // Sunridge, Riverstone, Mtn Hts
+				case 12: return "University" + SLASH + "Downtown";
+				case 23: return "Mayor Magrath" + SLASH + "Scenic"; // Counter Clockwise Loop
+				case 24: return "Mayor Magrath" + SLASH + "Scenic"; // Clockwise
+				case 31: return "Legacy Rdg" + SLASH + "Uplands";
+				case 32: return "Indian Battle"+SLASH+ "Columbia Blvd"; // Indian Battle Heights, Varsity Village
+				case 33: return "Heritage" + SLASH + "West Highlands" ; // Ridgewood, Heritage, West Highlands
+				case 35: return "Copperwood"; // Copperwood
+				case 36: return "Sunridge"; // Sunridge, Riverstone, Mtn Hts
 				case 37: return "Garry Station"; //
 				// @formatter:on
 				}
 			}
 			if ("20N".equalsIgnoreCase(gRoute.getRouteShortName())) {
-				return NORTH_TERMINAL;
+				return "North Terminal";
 			} else if ("20S".equalsIgnoreCase(gRoute.getRouteShortName())) {
-				return SOUTH_ENMAX;
+				return "South Enmax";
 			} else if ("21N".equalsIgnoreCase(gRoute.getRouteShortName())) {
-				return NORD_BRIDGE;
+				return "Nord-Bridge";
 			} else if ("21S".equalsIgnoreCase(gRoute.getRouteShortName())) {
-				return HENDERSON_LK_INDUSTRIAL;
+				return "Henderson Lk" + SLASH + "Industrial";
 			} else if ("22N".equalsIgnoreCase(gRoute.getRouteShortName())) {
-				return NORTH_TERMINAL; // 22 North
+				return "North Terminal"; // 22 North
 			} else if ("22S".equalsIgnoreCase(gRoute.getRouteShortName())) {
-				return SOUTH_GATE; //
+				return "South Gate"; //
 			}
 			System.out.printf("\nUnexpected route long name for %s!\n", gRoute);
 			System.exit(-1);
@@ -225,63 +197,124 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 	private static HashMap<Long, RouteTripSpec> ALL_ROUTE_TRIPS2;
 	static {
 		HashMap<Long, RouteTripSpec> map2 = new HashMap<Long, RouteTripSpec>();
-		map2.put(21l + RID_STARTS_WITH_N, new RouteTripSpec(21l + RID_STARTS_WITH_N, // 21N
-				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, NORD_BRIDGE, //
-				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, CITY_CTR) //
+		map2.put(20L + RID_STARTS_WITH_N, new RouteTripSpec(20L + RID_STARTS_WITH_N, // 20N
+				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, "North Terminal", //
+				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, StringUtils.EMPTY) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("14014"), //
-								Stops.ALL_STOPS.get("11143"), //
-								Stops.ALL_STOPS.get("11208") //
+						Stops.ALL_STOPS.get("12216"), // College Terminal
+								Stops.ALL_STOPS.get("14011"), // City Centre Terminal
+								Stops.ALL_STOPS.get("11053"), // North Terminal
 						})) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("11208"), //
-								Stops.ALL_STOPS.get("11141"), //
-								Stops.ALL_STOPS.get("14016"), //
+						/* no stops */
 						})) //
 				.compileBothTripSort());
-		map2.put(21l + RID_STARTS_WITH_S, new RouteTripSpec(21l + RID_STARTS_WITH_S, // 21S
-				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, HENDERSON_LK_INDUSTRIAL, //
-				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, CITY_CTR) //
+		map2.put(20L + RID_STARTS_WITH_S, new RouteTripSpec(20L + RID_STARTS_WITH_S, // 20S
+				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, StringUtils.EMPTY, //
+				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, "College Terminal") //
+				.addTripSort(MDirectionType.NORTH.intValue(), //
+						Arrays.asList(new String[] { //
+						/* no stops */
+						})) //
+				.addTripSort(MDirectionType.SOUTH.intValue(), //
+						Arrays.asList(new String[] { //
+						Stops.ALL_STOPS.get("11053"), // North Terminal
+								Stops.ALL_STOPS.get("14015"), // City Centre Terminal
+								Stops.ALL_STOPS.get("12216"), // College Terminal
+						})) //
+				.compileBothTripSort());
+		map2.put(21L + RID_STARTS_WITH_N, new RouteTripSpec(21L + RID_STARTS_WITH_N, // 21N
+				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, "Westminster", //
+				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, "City Ctr") //
+				.addTripSort(MDirectionType.EAST.intValue(), //
+						Arrays.asList(new String[] { //
+						Stops.ALL_STOPS.get("14014"), // City Centre Terminal
+								Stops.ALL_STOPS.get("11205"), // 19 ST N & 7 AVE N #Westminster
+						})) //
+				.addTripSort(MDirectionType.WEST.intValue(), //
+						Arrays.asList(new String[] { //
+						Stops.ALL_STOPS.get("11205"), // 19 ST N & 7 AVE N #Westminster
+								Stops.ALL_STOPS.get("14016"), // City Centre Terminal
+						})) //
+				.compileBothTripSort());
+		map2.put(21L + RID_STARTS_WITH_S, new RouteTripSpec(21L + RID_STARTS_WITH_S, // 21S
+				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, "Henderson Lk" + SLASH + "Industrial", //
+				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, "City Ctr") //
 				.addTripSort(MDirectionType.EAST.intValue(), //
 						Arrays.asList(new String[] { //
 						Stops.ALL_STOPS.get("14016"), // == City Center Terminal
-								Stops.ALL_STOPS.get("14034"), // !=
-								Stops.ALL_STOPS.get("12038"), // ==
-								Stops.ALL_STOPS.get("12011"), // !=
+								Stops.ALL_STOPS.get("14034"), // != 4 Ave & 8 St S
+								Stops.ALL_STOPS.get("12038"), // == City Hall
+								Stops.ALL_STOPS.get("12011"), // != LEASIDE AVE S & 2 AVE S
 								Stops.ALL_STOPS.get("12010"), // == Transfer Point
-								Stops.ALL_STOPS.get("12330"), // !=
-								Stops.ALL_STOPS.get("11267"), // !=
+								Stops.ALL_STOPS.get("12330"), // != 1 AVE S & 32 ST S
+								Stops.ALL_STOPS.get("11267"), // != 39 ST N & 14 AVE N
 								Stops.ALL_STOPS.get("11271"), // 14 AVE N & 39 ST N
 						})) //
 				.addTripSort(MDirectionType.WEST.intValue(), //
 						Arrays.asList(new String[] { //
 						Stops.ALL_STOPS.get("11271"), // 14 AVE N & 39 ST N
-								Stops.ALL_STOPS.get("11268"), // !=
-								Stops.ALL_STOPS.get("11054"), // !=
+								Stops.ALL_STOPS.get("11268"), // != 36 ST N & 14 AVE N
+								Stops.ALL_STOPS.get("11054"), // != 36 ST S & CROWSNEST HWY
 								Stops.ALL_STOPS.get("12010"), // == Transfer Point
-								Stops.ALL_STOPS.get("12009"), // !=
-								Stops.ALL_STOPS.get("12034"), // ==
-								Stops.ALL_STOPS.get("MESC2"), // !=
-								Stops.ALL_STOPS.get("MESC3"), // !=
-								Stops.ALL_STOPS.get("12035"), // ==
+								Stops.ALL_STOPS.get("12009"), // != 28 ST S & 3 AVE S
+								Stops.ALL_STOPS.get("12034"), // == 6 AVE S & 15 ST S
+								Stops.ALL_STOPS.get("12035"), // == 6 Ave & 13 St S
 								Stops.ALL_STOPS.get("14014"), // City Center Terminal
+						})) //
+				.compileBothTripSort());
+		map2.put(22L + RID_STARTS_WITH_N, new RouteTripSpec(22L + RID_STARTS_WITH_N, // 22N
+				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, "North Terminal", //
+				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, StringUtils.EMPTY) //
+				.addTripSort(MDirectionType.NORTH.intValue(), //
+						Arrays.asList(new String[] { //
+						Stops.ALL_STOPS.get("12106"), // College Terminal
+								Stops.ALL_STOPS.get("14015"), // City Centre Terminal
+								Stops.ALL_STOPS.get("11210"), // == MEADOWLARK BLVD N & 23 ST N
+								Stops.ALL_STOPS.get("11275"), // != 26 AVE N & BLUEFOX BLVD N
+								Stops.ALL_STOPS.get("11035"), // != 26 AVE N & ERMINEDALE BLVD N
+								Stops.ALL_STOPS.get("11274"), // != 26 AVE N & 23 ST N
+								Stops.ALL_STOPS.get("11034"), // != UPLANDS BLVD N & BLUEFOX RD N
+								Stops.ALL_STOPS.get("11052"), // == North Terminal
+						})) //
+				.addTripSort(MDirectionType.SOUTH.intValue(), //
+						Arrays.asList(new String[] { //
+						/* no stops */
+						})) //
+				.compileBothTripSort());
+		map2.put(22L + RID_STARTS_WITH_S, new RouteTripSpec(22L + RID_STARTS_WITH_S, // 22S
+				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, StringUtils.EMPTY, //
+				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, "College Terminal") //
+				.addTripSort(MDirectionType.NORTH.intValue(), //
+						Arrays.asList(new String[] { //
+						/* no stops */
+						})) //
+				.addTripSort(MDirectionType.SOUTH.intValue(), //
+						Arrays.asList(new String[] { //
+						Stops.ALL_STOPS.get("11052"), // North Terminal
+								Stops.ALL_STOPS.get("14015"), // City Centre Terminal
+								Stops.ALL_STOPS.get("12186"), // == SCENIC DR S & TUDOR CRES S
+								Stops.ALL_STOPS.get("12104"), // != COLLEGE DR & 28 AVE S
+								Stops.ALL_STOPS.get("12102"), // != Enmax Centre
+								Stops.ALL_STOPS.get("12130"), // != Lethbridge Soccer Complex
+								Stops.ALL_STOPS.get("12106"), // == College Terminal
 						})) //
 				.compileBothTripSort());
 		map2.put(23L, new RouteTripSpec(23L, //
 				0, MTrip.HEADSIGN_TYPE_STRING, "CCW", //
-				1, MTrip.HEADSIGN_TYPE_STRING, "") //
+				1, MTrip.HEADSIGN_TYPE_STRING, StringUtils.EMPTY) //
 				.addTripSort(0, //
 						Arrays.asList(new String[] { //
 						Stops.ALL_STOPS.get("14016"), // City Centre Terminal
 								Stops.ALL_STOPS.get("14017"), // ++ 5 AVE & 4 ST S
 								Stops.ALL_STOPS.get("12104"), // ++ COLLEGE DR & 28 AVE S
-								Stops.ALL_STOPS.get("12217"), // Lethbridge College
+								Stops.ALL_STOPS.get("12106"), // College Terminal
 								Stops.ALL_STOPS.get("12131"), // ++ 28 AVE S & 28 ST S
 								Stops.ALL_STOPS.get("12203"), // ++ MAYOR MAGRATH DR S & SOUTH PARKSIDE DR S
 								Stops.ALL_STOPS.get("11035"), // ++ 26 AVE N & ERMINEDALE BLVD N
-								Stops.ALL_STOPS.get("11052"), // North Terminal
+								Stops.ALL_STOPS.get("11053"), // North Terminal
 								Stops.ALL_STOPS.get("11112"), // ++ STAFFORD DR N & STAFFORD RD N
 								Stops.ALL_STOPS.get("14013"), // ++ 4 AVE S & 3 ST S
 								Stops.ALL_STOPS.get("14016"), // City Centre Terminal
@@ -293,12 +326,12 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				.compileBothTripSort());
 		map2.put(24L, new RouteTripSpec(24L, //
 				0, MTrip.HEADSIGN_TYPE_STRING, "CW", //
-				1, MTrip.HEADSIGN_TYPE_STRING, "") //
+				1, MTrip.HEADSIGN_TYPE_STRING, StringUtils.EMPTY) //
 				.addTripSort(0, //
 						Arrays.asList(new String[] { //
 						Stops.ALL_STOPS.get("14021"), // City Centre Terminal
 								Stops.ALL_STOPS.get("11052"), // North Terminal
-								Stops.ALL_STOPS.get("12217"), // Lethbridge College
+								Stops.ALL_STOPS.get("12216"), // College Terminal
 								Stops.ALL_STOPS.get("14021"), // City Centre Terminal
 						})) //
 				.addTripSort(1, //
@@ -306,103 +339,115 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 						/* no stops */
 						})) //
 				.compileBothTripSort());
-		map2.put(31l, new RouteTripSpec(31l, //
-				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, NORTH_TERMINAL, //
-				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, INDUSTRIAL) //
+		map2.put(32L, new RouteTripSpec(32L, //
+				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, "University", //
+				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, "Indian Battle") //
 				.addTripSort(MDirectionType.EAST.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("11262"), //
-								Stops.ALL_STOPS.get("11023"), //
-								Stops.ALL_STOPS.get("11052"), // North Terminal
+						Stops.ALL_STOPS.get("13034"), // RED CROW BLVD W & JERRY POTTS BLVD W
+								Stops.ALL_STOPS.get("13039"), // ++
+								Stops.ALL_STOPS.get("13068"), // ++
+								Stops.ALL_STOPS.get("13005"), // University Terminal
 						})) //
 				.addTripSort(MDirectionType.WEST.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("11052"), // North Terminal
-								Stops.ALL_STOPS.get("11006"), //
-								Stops.ALL_STOPS.get("11262"), //
+						Stops.ALL_STOPS.get("13003"), // University Terminal
+								Stops.ALL_STOPS.get("13029"), // ++
+								Stops.ALL_STOPS.get("13034"), // RED CROW BLVD W & JERRY POTTS BLVD W
 						})) //
 				.compileBothTripSort());
-		map2.put(32l, new RouteTripSpec(32l, //
-				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, UNIVERSITY, //
-				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, INDIAN_BATTLE) //
-				.addTripSort(MDirectionType.EAST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("13034"), //
-								Stops.ALL_STOPS.get("13039"), //
-								Stops.ALL_STOPS.get("13068"), //
-								Stops.ALL_STOPS.get("13005"), //
-						})) //
-				.addTripSort(MDirectionType.WEST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("13001"), //
-								Stops.ALL_STOPS.get("13029"), //
-								Stops.ALL_STOPS.get("13034"), //
-						})) //
-				.compileBothTripSort());
-		map2.put(33l, new RouteTripSpec(33l, //
-				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, HERITAGE, // "West Highlands", //
-				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, UNIVERSITY) //
+		map2.put(33L, new RouteTripSpec(33L, //
+				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, "Heritage", // "West Highlands", //
+				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, "University") //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("13002"), //
+						Stops.ALL_STOPS.get("13002"), // University Terminal
 								Stops.ALL_STOPS.get("13006"), //
 								Stops.ALL_STOPS.get("13013"), //
-								Stops.ALL_STOPS.get("13020"), //
+								Stops.ALL_STOPS.get("13020"), // HERITAGE BLVD & HERITAGE HEIGHTS PLAZA W
 						})) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("13020"), //
+						Stops.ALL_STOPS.get("13020"), // HERITAGE BLVD & HERITAGE HEIGHTS PLAZA W
 								Stops.ALL_STOPS.get("13023"), //
 								Stops.ALL_STOPS.get("13061"), //
-								Stops.ALL_STOPS.get("13002"), //
+								Stops.ALL_STOPS.get("13002"), // University Terminal
 						})) //
 				.compileBothTripSort());
-		map2.put(35l, new RouteTripSpec(35l, //
-				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, UNIVERSITY, //
-				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, CROSSINGS) // "Copperwood"
+		map2.put(35L, new RouteTripSpec(35L, //
+				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, "University", //
+				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, "Crossings") // "Copperwood"
 				.addTripSort(MDirectionType.EAST.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("13311"), //
-								Stops.ALL_STOPS.get("13043"), //
-								Stops.ALL_STOPS.get("13004"), //
+						Stops.ALL_STOPS.get("13311"), // BRITANNIA BLVD W & AQUITANIA BLVD W
+								Stops.ALL_STOPS.get("13043"), // ++
+								Stops.ALL_STOPS.get("13004"), // University Terminal
 						})) //
 				.addTripSort(MDirectionType.WEST.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("13004"), //
-								Stops.ALL_STOPS.get("13303"), //
-								Stops.ALL_STOPS.get("13311"), //
+						Stops.ALL_STOPS.get("13004"), // University Terminal
+								Stops.ALL_STOPS.get("13303"), // ++
+								Stops.ALL_STOPS.get("13311"), // BRITANNIA BLVD W & AQUITANIA BLVD W
 						})) //
 				.compileBothTripSort());
-		map2.put(36l, new RouteTripSpec(36l, //
-				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, UNIVERSITY, //
-				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, SUNRIDGE) //
+		map2.put(36L, new RouteTripSpec(36L, //
+				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, "University", //
+				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, "Sunridge") //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("13507"), //
-								Stops.ALL_STOPS.get("13517"), //
-								Stops.ALL_STOPS.get("13004"), // University Terminal
+						Stops.ALL_STOPS.get("13507"), // MT SUNDANCE RD W & MT SUNDIAL CRT W
+								Stops.ALL_STOPS.get("13517"), // ++
+								Stops.ALL_STOPS.get("13001"), // University Terminal
 						})) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("13004"), // University Terminal
-								Stops.ALL_STOPS.get("13503"), //
-								Stops.ALL_STOPS.get("13507"), //
+						Stops.ALL_STOPS.get("13001"), // University Terminal
+								Stops.ALL_STOPS.get("13503"), // ++
+								Stops.ALL_STOPS.get("13507"), // MT SUNDANCE RD W & MT SUNDIAL CRT W
 						})) //
 				.compileBothTripSort());
-		map2.put(37l, new RouteTripSpec(37l, //
-				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, UNIVERSITY, //
+		map2.put(37L, new RouteTripSpec(37L, //
+				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, "University", //
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, "Garry Sta") //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
 						Arrays.asList(new String[] { //
 						Stops.ALL_STOPS.get("13524"), // Garry Station Prt W & Garry Dr W
 								Stops.ALL_STOPS.get("13450"), // GARRY DR W & SQUAMISH BLVD W
-								Stops.ALL_STOPS.get("13004"), // University Terminal
+								Stops.ALL_STOPS.get("13000"), // University Terminal
 						})) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("13004"), // University Terminal
+						Stops.ALL_STOPS.get("13000"), // University Terminal
 								Stops.ALL_STOPS.get("13009"), // University Dr W & Edgewood Blvd W
 								Stops.ALL_STOPS.get("13524"), // Garry Station Prt W & Garry Dr W
+						})) //
+				.compileBothTripSort());
+		map2.put(40L, new RouteTripSpec(40L, //
+				0, MTrip.HEADSIGN_TYPE_STRING, "Fairmont", // CW
+				1, MTrip.HEADSIGN_TYPE_STRING, StringUtils.EMPTY) //
+				.addTripSort(0, //
+						Arrays.asList(new String[] { //
+						Stops.ALL_STOPS.get("12107"), // College Terminal
+								Stops.ALL_STOPS.get("12125"), // ++ FAIRMONT BLVD S & FAIRWAY ST S
+								Stops.ALL_STOPS.get("12107"), // College Terminal
+						})) //
+				.addTripSort(1, //
+						Arrays.asList(new String[] { //
+						/* no stops */
+						})) //
+				.compileBothTripSort());
+		map2.put(41L, new RouteTripSpec(41L, //
+				0, MTrip.HEADSIGN_TYPE_STRING, "Blackwolf", // CW
+				1, MTrip.HEADSIGN_TYPE_STRING, StringUtils.EMPTY) //
+				.addTripSort(0, //
+						Arrays.asList(new String[] { //
+						Stops.ALL_STOPS.get("11051"), // North Terminal
+								Stops.ALL_STOPS.get("11257"), // ++ LYNX RD N & BLACKWOLF BLVD N
+								Stops.ALL_STOPS.get("11051"), // North Terminal
+						})) //
+				.addTripSort(1, //
+						Arrays.asList(new String[] { //
+						/* no stops */
 						})) //
 				.compileBothTripSort());
 		ALL_ROUTE_TRIPS2 = map2;
@@ -439,6 +484,24 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 		}
 		String tripHeadsign = gTrip.getTripHeadsign();
 		mTrip.setHeadsignString(cleanTripHeadsign(tripHeadsign), gTrip.getDirectionId());
+	}
+
+	@Override
+	public boolean mergeHeadsign(MTrip mTrip, MTrip mTripToMerge) {
+		List<String> headsignsValues = Arrays.asList(mTrip.getHeadsignValue(), mTripToMerge.getHeadsignValue());
+		if (mTrip.getRouteId() == 21L + RID_STARTS_WITH_S) { // 21S
+			if (Arrays.asList( //
+					"City Ctr", //
+					"Henderson Lk", //
+					"Henderson Lk & Industrial" //
+			).containsAll(headsignsValues)) {
+				mTrip.setHeadsignString("Henderson Lk", mTrip.getHeadsignId());
+				return true;
+			}
+		}
+		System.out.printf("\nUnexpected trips to merge %s & %s!\n", mTrip, mTripToMerge);
+		System.exit(-1);
+		return false;
 	}
 
 	private static final String UNIVERSITY_OF_SHORT = "U of";
