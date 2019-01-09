@@ -197,6 +197,22 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 	private static HashMap<Long, RouteTripSpec> ALL_ROUTE_TRIPS2;
 	static {
 		HashMap<Long, RouteTripSpec> map2 = new HashMap<Long, RouteTripSpec>();
+		map2.put(10L, new RouteTripSpec(10L, //
+				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, "City Ctr", //
+				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, "University") //
+				.addTripSort(MDirectionType.EAST.intValue(), //
+						Arrays.asList(new String[] { //
+						Stops.ALL_STOPS.get("13005"), // University Terminal
+								Stops.ALL_STOPS.get("13007"), // ++ UNIVERSITY DR W & VALLEY RD W
+								Stops.ALL_STOPS.get("14014"), // City Centre Terminal
+						})) //
+				.addTripSort(MDirectionType.WEST.intValue(), //
+						Arrays.asList(new String[] { //
+						Stops.ALL_STOPS.get("14014"), // City Centre Terminal
+								Stops.ALL_STOPS.get("13042"), // ++ COLUMBIA BLVD W & lafayette blvd w
+								Stops.ALL_STOPS.get("13005"), // University Terminal
+						})) //
+				.compileBothTripSort());
 		map2.put(20L + RID_STARTS_WITH_N, new RouteTripSpec(20L + RID_STARTS_WITH_N, // 20N
 				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, "North Terminal", //
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, StringUtils.EMPTY) //
@@ -294,7 +310,7 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
 						Arrays.asList(new String[] { //
 						Stops.ALL_STOPS.get("11052"), // North Terminal
-								Stops.ALL_STOPS.get("14015"), // City Centre Terminal
+								Stops.ALL_STOPS.get("14011"), // City Centre Terminal
 								Stops.ALL_STOPS.get("12186"), // == SCENIC DR S & TUDOR CRES S
 								Stops.ALL_STOPS.get("12104"), // != COLLEGE DR & 28 AVE S
 								Stops.ALL_STOPS.get("12102"), // != Enmax Centre
