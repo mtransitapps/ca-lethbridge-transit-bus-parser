@@ -310,7 +310,7 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
 						Arrays.asList(new String[] { //
 						Stops.ALL_STOPS.get("11052"), // North Terminal
-								Stops.ALL_STOPS.get("14011"), // City Centre Terminal
+								Stops.ALL_STOPS.get("14021"), // City Centre Terminal
 								Stops.ALL_STOPS.get("12186"), // == SCENIC DR S & TUDOR CRES S
 								Stops.ALL_STOPS.get("12104"), // != COLLEGE DR & 28 AVE S
 								Stops.ALL_STOPS.get("12102"), // != Enmax Centre
@@ -323,7 +323,7 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				1, MTrip.HEADSIGN_TYPE_STRING, StringUtils.EMPTY) //
 				.addTripSort(0, //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("14016"), // City Centre Terminal
+						Stops.ALL_STOPS.get("14001"), // City Centre Terminal
 								Stops.ALL_STOPS.get("14017"), // ++ 5 AVE & 4 ST S
 								Stops.ALL_STOPS.get("12104"), // ++ COLLEGE DR & 28 AVE S
 								Stops.ALL_STOPS.get("12106"), // College Terminal
@@ -333,7 +333,7 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("11053"), // North Terminal
 								Stops.ALL_STOPS.get("11112"), // ++ STAFFORD DR N & STAFFORD RD N
 								Stops.ALL_STOPS.get("14013"), // ++ 4 AVE S & 3 ST S
-								Stops.ALL_STOPS.get("14016"), // City Centre Terminal
+								Stops.ALL_STOPS.get("14001"), // City Centre Terminal
 						})) //
 				.addTripSort(1, //
 						Arrays.asList(new String[] { //
@@ -345,10 +345,10 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				1, MTrip.HEADSIGN_TYPE_STRING, StringUtils.EMPTY) //
 				.addTripSort(0, //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("14021"), // City Centre Terminal
+						Stops.ALL_STOPS.get("14000"), // City Centre Terminal
 								Stops.ALL_STOPS.get("11052"), // North Terminal
 								Stops.ALL_STOPS.get("12216"), // College Terminal
-								Stops.ALL_STOPS.get("14021"), // City Centre Terminal
+								Stops.ALL_STOPS.get("14000"), // City Centre Terminal
 						})) //
 				.addTripSort(1, //
 						Arrays.asList(new String[] { //
