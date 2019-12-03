@@ -202,15 +202,15 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, "University") //
 				.addTripSort(MDirectionType.EAST.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("13005"), // University Terminal
-								Stops.ALL_STOPS.get("13007"), // ++ UNIVERSITY DR W & VALLEY RD W
-								Stops.ALL_STOPS.get("14014"), // City Centre Terminal
+						Stops.getALL_STOPS().get("13005"), // University Terminal
+								Stops.getALL_STOPS().get("13007"), // ++ UNIVERSITY DR W & VALLEY RD W
+								Stops.getALL_STOPS().get("14014"), // City Centre Terminal
 						})) //
 				.addTripSort(MDirectionType.WEST.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("14014"), // City Centre Terminal
-								Stops.ALL_STOPS.get("13042"), // ++ COLUMBIA BLVD W & lafayette blvd w
-								Stops.ALL_STOPS.get("13005"), // University Terminal
+						Stops.getALL_STOPS().get("14014"), // City Centre Terminal
+								Stops.getALL_STOPS().get("13042"), // ++ COLUMBIA BLVD W & lafayette blvd w
+								Stops.getALL_STOPS().get("13005"), // University Terminal
 						})) //
 				.compileBothTripSort());
 		map2.put(20L + RID_STARTS_WITH_N, new RouteTripSpec(20L + RID_STARTS_WITH_N, // 20N
@@ -218,9 +218,9 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, StringUtils.EMPTY) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("12216"), // College Terminal
-								Stops.ALL_STOPS.get("14011"), // City Centre Terminal
-								Stops.ALL_STOPS.get("11053"), // North Terminal
+						Stops.getALL_STOPS().get("12216"), // College Terminal
+								Stops.getALL_STOPS().get("14011"), // City Centre Terminal
+								Stops.getALL_STOPS().get("11053"), // North Terminal
 						})) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
 						Arrays.asList(new String[] { //
@@ -236,9 +236,9 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 						})) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("11053"), // North Terminal
-								Stops.ALL_STOPS.get("14015"), // City Centre Terminal
-								Stops.ALL_STOPS.get("12216"), // College Terminal
+						Stops.getALL_STOPS().get("11053"), // North Terminal
+								Stops.getALL_STOPS().get("14015"), // City Centre Terminal
+								Stops.getALL_STOPS().get("12216"), // College Terminal
 						})) //
 				.compileBothTripSort());
 		map2.put(21L + RID_STARTS_WITH_N, new RouteTripSpec(21L + RID_STARTS_WITH_N, // 21N
@@ -246,13 +246,13 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, "City Ctr") //
 				.addTripSort(MDirectionType.EAST.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("14014"), // City Centre Terminal
-								Stops.ALL_STOPS.get("11205"), // 19 ST N & 7 AVE N #Westminster
+						Stops.getALL_STOPS().get("14014"), // City Centre Terminal
+								Stops.getALL_STOPS().get("11205"), // 19 ST N & 7 AVE N #Westminster
 						})) //
 				.addTripSort(MDirectionType.WEST.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("11205"), // 19 ST N & 7 AVE N #Westminster
-								Stops.ALL_STOPS.get("14016"), // City Centre Terminal
+						Stops.getALL_STOPS().get("11205"), // 19 ST N & 7 AVE N #Westminster
+								Stops.getALL_STOPS().get("14016"), // City Centre Terminal
 						})) //
 				.compileBothTripSort());
 		map2.put(21L + RID_STARTS_WITH_S, new RouteTripSpec(21L + RID_STARTS_WITH_S, // 21S
@@ -260,25 +260,25 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, "City Ctr") //
 				.addTripSort(MDirectionType.EAST.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("14016"), // == City Center Terminal
-								Stops.ALL_STOPS.get("14034"), // != 4 Ave & 8 St S
-								Stops.ALL_STOPS.get("12038"), // == City Hall
-								Stops.ALL_STOPS.get("12011"), // != LEASIDE AVE S & 2 AVE S
-								Stops.ALL_STOPS.get("12010"), // == Transfer Point
-								Stops.ALL_STOPS.get("12330"), // != 1 AVE S & 32 ST S
-								Stops.ALL_STOPS.get("11267"), // != 39 ST N & 14 AVE N
-								Stops.ALL_STOPS.get("11271"), // 14 AVE N & 39 ST N
+						Stops.getALL_STOPS().get("14016"), // == City Center Terminal
+								Stops.getALL_STOPS().get("14034"), // != 4 Ave & 8 St S
+								Stops.getALL_STOPS().get("12038"), // == City Hall
+								Stops.getALL_STOPS().get("12011"), // != LEASIDE AVE S & 2 AVE S
+								Stops.getALL_STOPS().get("12010"), // == Transfer Point
+								Stops.getALL_STOPS().get("12330"), // != 1 AVE S & 32 ST S
+								Stops.getALL_STOPS().get("11267"), // != 39 ST N & 14 AVE N
+								Stops.getALL_STOPS().get("11271"), // 14 AVE N & 39 ST N
 						})) //
 				.addTripSort(MDirectionType.WEST.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("11271"), // 14 AVE N & 39 ST N
-								Stops.ALL_STOPS.get("11268"), // != 36 ST N & 14 AVE N
-								Stops.ALL_STOPS.get("11054"), // != 36 ST S & CROWSNEST HWY
-								Stops.ALL_STOPS.get("12010"), // == Transfer Point
-								Stops.ALL_STOPS.get("12009"), // != 28 ST S & 3 AVE S
-								Stops.ALL_STOPS.get("12034"), // == 6 AVE S & 15 ST S
-								Stops.ALL_STOPS.get("12035"), // == 6 Ave & 13 St S
-								Stops.ALL_STOPS.get("14014"), // City Center Terminal
+						Stops.getALL_STOPS().get("11271"), // 14 AVE N & 39 ST N
+								Stops.getALL_STOPS().get("11268"), // != 36 ST N & 14 AVE N
+								Stops.getALL_STOPS().get("11054"), // != 36 ST S & CROWSNEST HWY
+								Stops.getALL_STOPS().get("12010"), // == Transfer Point
+								Stops.getALL_STOPS().get("12009"), // != 28 ST S & 3 AVE S
+								Stops.getALL_STOPS().get("12034"), // == 6 AVE S & 15 ST S
+								Stops.getALL_STOPS().get("12035"), // == 6 Ave & 13 St S
+								Stops.getALL_STOPS().get("14014"), // City Center Terminal
 						})) //
 				.compileBothTripSort());
 		map2.put(22L + RID_STARTS_WITH_N, new RouteTripSpec(22L + RID_STARTS_WITH_N, // 22N
@@ -286,14 +286,14 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, StringUtils.EMPTY) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("12106"), // College Terminal
-								Stops.ALL_STOPS.get("14015"), // City Centre Terminal
-								Stops.ALL_STOPS.get("11210"), // == MEADOWLARK BLVD N & 23 ST N
-								Stops.ALL_STOPS.get("11275"), // != 26 AVE N & BLUEFOX BLVD N
-								Stops.ALL_STOPS.get("11035"), // != 26 AVE N & ERMINEDALE BLVD N
-								Stops.ALL_STOPS.get("11274"), // != 26 AVE N & 23 ST N
-								Stops.ALL_STOPS.get("11034"), // != UPLANDS BLVD N & BLUEFOX RD N
-								Stops.ALL_STOPS.get("11052"), // == North Terminal
+						Stops.getALL_STOPS().get("12106"), // College Terminal
+								Stops.getALL_STOPS().get("14015"), // City Centre Terminal
+								Stops.getALL_STOPS().get("11210"), // == MEADOWLARK BLVD N & 23 ST N
+								Stops.getALL_STOPS().get("11275"), // != 26 AVE N & BLUEFOX BLVD N
+								Stops.getALL_STOPS().get("11035"), // != 26 AVE N & ERMINEDALE BLVD N
+								Stops.getALL_STOPS().get("11274"), // != 26 AVE N & 23 ST N
+								Stops.getALL_STOPS().get("11034"), // != UPLANDS BLVD N & BLUEFOX RD N
+								Stops.getALL_STOPS().get("11052"), // == North Terminal
 						})) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
 						Arrays.asList(new String[] { //
@@ -309,13 +309,13 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 						})) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("11052"), // North Terminal
-								Stops.ALL_STOPS.get("14021"), // City Centre Terminal
-								Stops.ALL_STOPS.get("12186"), // == SCENIC DR S & TUDOR CRES S
-								Stops.ALL_STOPS.get("12104"), // != COLLEGE DR & 28 AVE S
-								Stops.ALL_STOPS.get("12102"), // != Enmax Centre
-								Stops.ALL_STOPS.get("12130"), // != Lethbridge Soccer Complex
-								Stops.ALL_STOPS.get("12106"), // == College Terminal
+						Stops.getALL_STOPS().get("11052"), // North Terminal
+								Stops.getALL_STOPS().get("14021"), // City Centre Terminal
+								Stops.getALL_STOPS().get("12186"), // == SCENIC DR S & TUDOR CRES S
+								Stops.getALL_STOPS().get("12104"), // != COLLEGE DR & 28 AVE S
+								Stops.getALL_STOPS().get("12102"), // != Enmax Centre
+								Stops.getALL_STOPS().get("12130"), // != Lethbridge Soccer Complex
+								Stops.getALL_STOPS().get("12106"), // == College Terminal
 						})) //
 				.compileBothTripSort());
 		map2.put(23L, new RouteTripSpec(23L, //
@@ -323,17 +323,17 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				1, MTrip.HEADSIGN_TYPE_STRING, StringUtils.EMPTY) //
 				.addTripSort(0, //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("14001"), // City Centre Terminal
-								Stops.ALL_STOPS.get("14017"), // ++ 5 AVE & 4 ST S
-								Stops.ALL_STOPS.get("12104"), // ++ COLLEGE DR & 28 AVE S
-								Stops.ALL_STOPS.get("12106"), // College Terminal
-								Stops.ALL_STOPS.get("12131"), // ++ 28 AVE S & 28 ST S
-								Stops.ALL_STOPS.get("12203"), // ++ MAYOR MAGRATH DR S & SOUTH PARKSIDE DR S
-								Stops.ALL_STOPS.get("11035"), // ++ 26 AVE N & ERMINEDALE BLVD N
-								Stops.ALL_STOPS.get("11053"), // North Terminal
-								Stops.ALL_STOPS.get("11112"), // ++ STAFFORD DR N & STAFFORD RD N
-								Stops.ALL_STOPS.get("14013"), // ++ 4 AVE S & 3 ST S
-								Stops.ALL_STOPS.get("14001"), // City Centre Terminal
+						Stops.getALL_STOPS().get("14001"), // City Centre Terminal
+								Stops.getALL_STOPS().get("14017"), // ++ 5 AVE & 4 ST S
+								Stops.getALL_STOPS().get("12104"), // ++ COLLEGE DR & 28 AVE S
+								Stops.getALL_STOPS().get("12106"), // College Terminal
+								Stops.getALL_STOPS().get("12131"), // ++ 28 AVE S & 28 ST S
+								Stops.getALL_STOPS().get("12203"), // ++ MAYOR MAGRATH DR S & SOUTH PARKSIDE DR S
+								Stops.getALL_STOPS().get("11035"), // ++ 26 AVE N & ERMINEDALE BLVD N
+								Stops.getALL_STOPS().get("11053"), // North Terminal
+								Stops.getALL_STOPS().get("11112"), // ++ STAFFORD DR N & STAFFORD RD N
+								Stops.getALL_STOPS().get("14013"), // ++ 4 AVE S & 3 ST S
+								Stops.getALL_STOPS().get("14001"), // City Centre Terminal
 						})) //
 				.addTripSort(1, //
 						Arrays.asList(new String[] { //
@@ -345,10 +345,10 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				1, MTrip.HEADSIGN_TYPE_STRING, StringUtils.EMPTY) //
 				.addTripSort(0, //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("14000"), // City Centre Terminal
-								Stops.ALL_STOPS.get("11052"), // North Terminal
-								Stops.ALL_STOPS.get("12216"), // College Terminal
-								Stops.ALL_STOPS.get("14000"), // City Centre Terminal
+						Stops.getALL_STOPS().get("14000"), // City Centre Terminal
+								Stops.getALL_STOPS().get("11052"), // North Terminal
+								Stops.getALL_STOPS().get("12216"), // College Terminal
+								Stops.getALL_STOPS().get("14000"), // City Centre Terminal
 						})) //
 				.addTripSort(1, //
 						Arrays.asList(new String[] { //
@@ -360,16 +360,16 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, "Indian Battle") //
 				.addTripSort(MDirectionType.EAST.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("13034"), // RED CROW BLVD W & JERRY POTTS BLVD W
-								Stops.ALL_STOPS.get("13039"), // ++
-								Stops.ALL_STOPS.get("13068"), // ++
-								Stops.ALL_STOPS.get("13005"), // University Terminal
+						Stops.getALL_STOPS().get("13034"), // RED CROW BLVD W & JERRY POTTS BLVD W
+								Stops.getALL_STOPS().get("13039"), // ++
+								Stops.getALL_STOPS().get("13068"), // ++
+								Stops.getALL_STOPS().get("13005"), // University Terminal
 						})) //
 				.addTripSort(MDirectionType.WEST.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("13003"), // University Terminal
-								Stops.ALL_STOPS.get("13029"), // ++
-								Stops.ALL_STOPS.get("13034"), // RED CROW BLVD W & JERRY POTTS BLVD W
+						Stops.getALL_STOPS().get("13003"), // University Terminal
+								Stops.getALL_STOPS().get("13029"), // ++
+								Stops.getALL_STOPS().get("13034"), // RED CROW BLVD W & JERRY POTTS BLVD W
 						})) //
 				.compileBothTripSort());
 		map2.put(33L, new RouteTripSpec(33L, //
@@ -377,17 +377,17 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, "University") //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("13002"), // University Terminal
-								Stops.ALL_STOPS.get("13006"), //
-								Stops.ALL_STOPS.get("13013"), //
-								Stops.ALL_STOPS.get("13020"), // HERITAGE BLVD & HERITAGE HEIGHTS PLAZA W
+						Stops.getALL_STOPS().get("13002"), // University Terminal
+								Stops.getALL_STOPS().get("13006"), //
+								Stops.getALL_STOPS().get("13013"), //
+								Stops.getALL_STOPS().get("13020"), // HERITAGE BLVD & HERITAGE HEIGHTS PLAZA W
 						})) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("13020"), // HERITAGE BLVD & HERITAGE HEIGHTS PLAZA W
-								Stops.ALL_STOPS.get("13023"), //
-								Stops.ALL_STOPS.get("13061"), //
-								Stops.ALL_STOPS.get("13002"), // University Terminal
+						Stops.getALL_STOPS().get("13020"), // HERITAGE BLVD & HERITAGE HEIGHTS PLAZA W
+								Stops.getALL_STOPS().get("13023"), //
+								Stops.getALL_STOPS().get("13061"), //
+								Stops.getALL_STOPS().get("13002"), // University Terminal
 						})) //
 				.compileBothTripSort());
 		map2.put(35L, new RouteTripSpec(35L, //
@@ -395,15 +395,15 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, "Crossings") // "Copperwood"
 				.addTripSort(MDirectionType.EAST.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("13311"), // BRITANNIA BLVD W & AQUITANIA BLVD W
-								Stops.ALL_STOPS.get("13043"), // ++
-								Stops.ALL_STOPS.get("13004"), // University Terminal
+						Stops.getALL_STOPS().get("13311"), // BRITANNIA BLVD W & AQUITANIA BLVD W
+								Stops.getALL_STOPS().get("13043"), // ++
+								Stops.getALL_STOPS().get("13004"), // University Terminal
 						})) //
 				.addTripSort(MDirectionType.WEST.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("13004"), // University Terminal
-								Stops.ALL_STOPS.get("13303"), // ++
-								Stops.ALL_STOPS.get("13311"), // BRITANNIA BLVD W & AQUITANIA BLVD W
+						Stops.getALL_STOPS().get("13004"), // University Terminal
+								Stops.getALL_STOPS().get("13303"), // ++
+								Stops.getALL_STOPS().get("13311"), // BRITANNIA BLVD W & AQUITANIA BLVD W
 						})) //
 				.compileBothTripSort());
 		map2.put(36L, new RouteTripSpec(36L, //
@@ -411,15 +411,15 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, "Sunridge") //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("13507"), // MT SUNDANCE RD W & MT SUNDIAL CRT W
-								Stops.ALL_STOPS.get("13517"), // ++
-								Stops.ALL_STOPS.get("13001"), // University Terminal
+						Stops.getALL_STOPS().get("13507"), // MT SUNDANCE RD W & MT SUNDIAL CRT W
+								Stops.getALL_STOPS().get("13517"), // ++
+								Stops.getALL_STOPS().get("13001"), // University Terminal
 						})) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("13001"), // University Terminal
-								Stops.ALL_STOPS.get("13503"), // ++
-								Stops.ALL_STOPS.get("13507"), // MT SUNDANCE RD W & MT SUNDIAL CRT W
+						Stops.getALL_STOPS().get("13001"), // University Terminal
+								Stops.getALL_STOPS().get("13503"), // ++
+								Stops.getALL_STOPS().get("13507"), // MT SUNDANCE RD W & MT SUNDIAL CRT W
 						})) //
 				.compileBothTripSort());
 		map2.put(37L, new RouteTripSpec(37L, //
@@ -427,15 +427,15 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, "Garry Sta") //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("13524"), // Garry Station Prt W & Garry Dr W
-								Stops.ALL_STOPS.get("13450"), // GARRY DR W & SQUAMISH BLVD W
-								Stops.ALL_STOPS.get("13000"), // University Terminal
+						Stops.getALL_STOPS().get("13524"), // Garry Station Prt W & Garry Dr W
+								Stops.getALL_STOPS().get("13450"), // GARRY DR W & SQUAMISH BLVD W
+								Stops.getALL_STOPS().get("13000"), // University Terminal
 						})) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("13000"), // University Terminal
-								Stops.ALL_STOPS.get("13009"), // University Dr W & Edgewood Blvd W
-								Stops.ALL_STOPS.get("13524"), // Garry Station Prt W & Garry Dr W
+						Stops.getALL_STOPS().get("13000"), // University Terminal
+								Stops.getALL_STOPS().get("13009"), // University Dr W & Edgewood Blvd W
+								Stops.getALL_STOPS().get("13524"), // Garry Station Prt W & Garry Dr W
 						})) //
 				.compileBothTripSort());
 		map2.put(40L, new RouteTripSpec(40L, //
@@ -443,9 +443,9 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				1, MTrip.HEADSIGN_TYPE_STRING, StringUtils.EMPTY) //
 				.addTripSort(0, //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("12107"), // College Terminal
-								Stops.ALL_STOPS.get("12125"), // ++ FAIRMONT BLVD S & FAIRWAY ST S
-								Stops.ALL_STOPS.get("12107"), // College Terminal
+						Stops.getALL_STOPS().get("12107"), // College Terminal
+								Stops.getALL_STOPS().get("12125"), // ++ FAIRMONT BLVD S & FAIRWAY ST S
+								Stops.getALL_STOPS().get("12107"), // College Terminal
 						})) //
 				.addTripSort(1, //
 						Arrays.asList(new String[] { //
@@ -457,9 +457,9 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				1, MTrip.HEADSIGN_TYPE_STRING, StringUtils.EMPTY) //
 				.addTripSort(0, //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("11051"), // North Terminal
-								Stops.ALL_STOPS.get("11257"), // ++ LYNX RD N & BLACKWOLF BLVD N
-								Stops.ALL_STOPS.get("11051"), // North Terminal
+						Stops.getALL_STOPS().get("11051"), // North Terminal
+								Stops.getALL_STOPS().get("11257"), // ++ LYNX RD N & BLACKWOLF BLVD N
+								Stops.getALL_STOPS().get("11051"), // North Terminal
 						})) //
 				.addTripSort(1, //
 						Arrays.asList(new String[] { //
