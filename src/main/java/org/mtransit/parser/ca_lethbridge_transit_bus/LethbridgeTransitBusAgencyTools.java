@@ -32,9 +32,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 // http://opendata.lethbridge.ca/
-// http://opendata.lethbridge.ca/datasets?keyword=GroupTransportation
-// http://opendata.lethbridge.ca/datasets?keyword=GroupGTFSTransit
-// http://www.lethbridge.ca/OpenDataSets/GTFS_Transit_Data.zip
+// http://opendata.lethbridge.ca/datasets/e5ce3aa182114d66926d06ba732fb668
+// https://www.lethbridge.ca/OpenDataSets/GTFS_Transit_Data.zip
 public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 
 	public static void main(String[] args) {
