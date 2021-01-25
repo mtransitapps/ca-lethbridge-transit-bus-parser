@@ -127,7 +127,7 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 		throw new MTLog.Fatal("Unexpected route ID for %s!", gRoute);
 	}
 
-	private static final String SLASH = " / ";
+	private static final String _SLASH_ = " / ";
 
 	@NotNull
 	@SuppressWarnings("DuplicateBranchesInSwitch")
@@ -142,12 +142,12 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				int rsn = Integer.parseInt(gRoute.getRouteShortName());
 				switch (rsn) {
 				// @formatter:off
-				case 12: return "University" + SLASH + "Downtown";
-				case 23: return "Mayor Magrath" + SLASH + "Scenic"; // Counter Clockwise Loop
-				case 24: return "Mayor Magrath" + SLASH + "Scenic"; // Clockwise
-				case 31: return "Legacy Rdg" + SLASH + "Uplands";
-				case 32: return "Indian Battle"+SLASH+ "Columbia Blvd"; // Indian Battle Heights, Varsity Village
-				case 33: return "Heritage" + SLASH + "West Highlands" ; // Ridgewood, Heritage, West Highlands
+				case 12: return "University" + _SLASH_ + "Downtown";
+				case 23: return "Mayor Magrath" + _SLASH_ + "Scenic"; // Counter Clockwise Loop
+				case 24: return "Mayor Magrath" + _SLASH_ + "Scenic"; // Clockwise
+				case 31: return "Legacy Rdg" + _SLASH_ + "Uplands";
+				case 32: return "Indian Battle"+_SLASH_+ "Columbia Blvd"; // Indian Battle Heights, Varsity Village
+				case 33: return "Heritage" + _SLASH_ + "West Highlands" ; // Ridgewood, Heritage, West Highlands
 				case 35: return "Copperwood"; // Copperwood
 				case 36: return "Sunridge"; // Sunridge, Riverstone, Mtn Hts
 				case 37: return "Garry Station"; //
@@ -161,7 +161,7 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 			} else if ("21N".equalsIgnoreCase(gRoute.getRouteShortName())) {
 				return "Nord-Bridge";
 			} else if ("21S".equalsIgnoreCase(gRoute.getRouteShortName())) {
-				return "Henderson Lk" + SLASH + "Industrial";
+				return "Henderson Lk" + _SLASH_ + "Industrial";
 			} else if ("22N".equalsIgnoreCase(gRoute.getRouteShortName())) {
 				return "North Terminal"; // 22 North
 			} else if ("22S".equalsIgnoreCase(gRoute.getRouteShortName())) {
@@ -415,6 +415,11 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 				cleanTripHeadsign(tripHeadsign),
 				gTrip.getDirectionIdOrDefault()
 		);
+	}
+
+	@Override
+	public boolean directionFinderEnabled() {
+		return false; // DISABLED because provided direction_id useless & 2 routes = 1 route w/ 2 directions
 	}
 
 	@Override
