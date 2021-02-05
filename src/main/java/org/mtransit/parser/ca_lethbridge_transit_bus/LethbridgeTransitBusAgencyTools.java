@@ -2,13 +2,14 @@ package org.mtransit.parser.ca_lethbridge_transit_bus;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.mtransit.parser.CleanUtils;
+import org.mtransit.commons.CharUtils;
+import org.mtransit.commons.CleanUtils;
+import org.mtransit.commons.StringUtils;
 import org.mtransit.parser.DefaultAgencyTools;
 import org.mtransit.parser.MTLog;
 import org.mtransit.parser.Pair;
 import org.mtransit.parser.SplitUtils;
 import org.mtransit.parser.SplitUtils.RouteTripSpec;
-import org.mtransit.parser.StringUtils;
 import org.mtransit.parser.Utils;
 import org.mtransit.parser.gtfs.data.GCalendar;
 import org.mtransit.parser.gtfs.data.GCalendarDate;
@@ -112,7 +113,7 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 
 	@Override
 	public long getRouteId(@NotNull GRoute gRoute) {
-		if (Utils.isDigitsOnly(gRoute.getRouteShortName())) {
+		if (CharUtils.isDigitsOnly(gRoute.getRouteShortName())) {
 			return Long.parseLong(gRoute.getRouteShortName()); // using route short name as route ID
 		}
 		Matcher matcher = DIGITS.matcher(gRoute.getRouteShortName());
@@ -138,7 +139,7 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 			routeLongName = gRoute.getRouteDescOrDefault(); // using route description as route long name
 		}
 		if (StringUtils.isEmpty(routeLongName)) {
-			if (Utils.isDigitsOnly(gRoute.getRouteShortName())) {
+			if (CharUtils.isDigitsOnly(gRoute.getRouteShortName())) {
 				int rsn = Integer.parseInt(gRoute.getRouteShortName());
 				switch (rsn) {
 				// @formatter:off
@@ -427,10 +428,6 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 		throw new MTLog.Fatal("Unexpected trips to merge %s & %s!", mTrip, mTripToMerge);
 	}
 
-	private static final String UNIVERSITY_OF_SHORT = "U of";
-	private static final Pattern UNIVERSITY_OF = Pattern.compile("((^|\\W)(university of)(\\W|$))", Pattern.CASE_INSENSITIVE);
-	private static final String UNIVERSITY_OF_REPLACEMENT = "$2" + UNIVERSITY_OF_SHORT + "$4";
-
 	private static final Pattern ENDS_WITH_LOOP = Pattern.compile("([\\s]*loop$)", Pattern.CASE_INSENSITIVE);
 	private static final Pattern ENDS_WITH_ROUTE = Pattern.compile("([\\s]*route$)", Pattern.CASE_INSENSITIVE);
 
@@ -439,7 +436,6 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 	public String cleanTripHeadsign(@NotNull String tripHeadsign) {
 		tripHeadsign = ENDS_WITH_LOOP.matcher(tripHeadsign).replaceAll(EMPTY);
 		tripHeadsign = ENDS_WITH_ROUTE.matcher(tripHeadsign).replaceAll(EMPTY);
-		tripHeadsign = UNIVERSITY_OF.matcher(tripHeadsign).replaceAll(UNIVERSITY_OF_REPLACEMENT);
 		tripHeadsign = CleanUtils.fixMcXCase(tripHeadsign);
 		tripHeadsign = CleanUtils.CLEAN_AT.matcher(tripHeadsign).replaceAll(CleanUtils.CLEAN_AT_REPLACEMENT);
 		tripHeadsign = CleanUtils.CLEAN_AND.matcher(tripHeadsign).replaceAll(CleanUtils.CLEAN_AND_REPLACEMENT);
@@ -468,7 +464,7 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 
 	@Override
 	public int getStopId(@NotNull GStop gStop) {
-		if (Utils.isDigitsOnly(gStop.getStopCode())) {
+		if (CharUtils.isDigitsOnly(gStop.getStopCode())) {
 			return Integer.parseInt(gStop.getStopCode()); // use stop code as stop ID
 		}
 		Matcher matcher = DIGITS.matcher(gStop.getStopCode());
