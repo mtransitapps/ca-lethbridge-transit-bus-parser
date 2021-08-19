@@ -45,8 +45,10 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 
 	private static final Pattern DIGITS = Pattern.compile("[\\d]+");
 
-	private static final String N = "n";
-	private static final String S = "s";
+
+	private static final long RID_ENDS_WITH_A = 10_000L;
+	private static final long RID_ENDS_WITH_B = 20_000L;
+	private static final long RID_ENDS_WITH_C = 30_000L;
 
 	private static final long RID_STARTS_WITH_N = 140_000L;
 	private static final long RID_STARTS_WITH_S = 190_000L;
@@ -58,14 +60,22 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 		}
 		final Matcher matcher = DIGITS.matcher(gRoute.getRouteShortName());
 		if (matcher.find()) {
-			long digits = Long.parseLong(matcher.group());
-			if (gRoute.getRouteShortName().toLowerCase(Locale.ENGLISH).endsWith(N)) {
+			final long digits = Long.parseLong(matcher.group());
+			final String rsnLC = gRoute.getRouteShortName().toLowerCase(Locale.ENGLISH);
+			if (rsnLC.endsWith("a")) {
+				return RID_ENDS_WITH_A + digits;
+			} else if (rsnLC.endsWith("b")) {
+				return RID_ENDS_WITH_B + digits;
+			} else if (rsnLC.endsWith("c")) {
+				return RID_ENDS_WITH_C + digits;
+			}
+			if (rsnLC.endsWith("n")) {
 				return RID_STARTS_WITH_N + digits;
-			} else if (gRoute.getRouteShortName().toLowerCase(Locale.ENGLISH).endsWith(S)) {
+			} else if (rsnLC.endsWith("s")) {
 				return RID_STARTS_WITH_S + digits;
 			}
 		}
-		throw new MTLog.Fatal("Unexpected route ID for %s!", gRoute);
+		throw new MTLog.Fatal("Unexpected route ID for %s!", gRoute.toStringPlus());
 	}
 
 	private static final String _SLASH_ = " / ";
