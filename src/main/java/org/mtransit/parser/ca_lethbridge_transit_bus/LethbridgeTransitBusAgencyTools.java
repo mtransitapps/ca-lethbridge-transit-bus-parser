@@ -1,29 +1,36 @@
 package org.mtransit.parser.ca_lethbridge_transit_bus;
 
+import static org.mtransit.commons.RegexUtils.DIGITS;
+import static org.mtransit.commons.StringUtils.EMPTY;
+
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.mtransit.commons.CharUtils;
 import org.mtransit.commons.CleanUtils;
-import org.mtransit.commons.StringUtils;
 import org.mtransit.parser.DefaultAgencyTools;
 import org.mtransit.parser.MTLog;
-import org.mtransit.parser.gtfs.data.GRoute;
 import org.mtransit.parser.gtfs.data.GStop;
 import org.mtransit.parser.mt.data.MAgency;
+import org.mtransit.parser.mt.data.MRouteSNToIDConverter;
 
+import java.util.List;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static org.mtransit.parser.StringUtils.EMPTY;
 
 // http://opendata.lethbridge.ca/
 // http://opendata.lethbridge.ca/datasets/e5ce3aa182114d66926d06ba732fb668
 // https://www.lethbridge.ca/OpenDataSets/GTFS_Transit_Data.zip
 public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 
-	public static void main(@Nullable String[] args) {
+	public static void main(@NotNull String[] args) {
 		new LethbridgeTransitBusAgencyTools().start(args);
+	}
+
+	@Nullable
+	@Override
+	public List<Locale> getSupportedLanguages() {
+		return LANG_EN;
 	}
 
 	@Override
@@ -43,84 +50,24 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 		return MAgency.ROUTE_TYPE_BUS;
 	}
 
-	private static final Pattern DIGITS = Pattern.compile("[\\d]+");
-
-
-	private static final long RID_ENDS_WITH_A = 10_000L;
-	private static final long RID_ENDS_WITH_B = 20_000L;
-	private static final long RID_ENDS_WITH_C = 30_000L;
-
-	private static final long RID_STARTS_WITH_N = 140_000L;
-	private static final long RID_STARTS_WITH_S = 190_000L;
-
 	@Override
-	public long getRouteId(@NotNull GRoute gRoute) {
-		if (CharUtils.isDigitsOnly(gRoute.getRouteShortName())) {
-			return Long.parseLong(gRoute.getRouteShortName()); // using route short name as route ID
-		}
-		final Matcher matcher = DIGITS.matcher(gRoute.getRouteShortName());
-		if (matcher.find()) {
-			final long digits = Long.parseLong(matcher.group());
-			final String rsnLC = gRoute.getRouteShortName().toLowerCase(Locale.ENGLISH);
-			if (rsnLC.endsWith("a")) {
-				return RID_ENDS_WITH_A + digits;
-			} else if (rsnLC.endsWith("b")) {
-				return RID_ENDS_WITH_B + digits;
-			} else if (rsnLC.endsWith("c")) {
-				return RID_ENDS_WITH_C + digits;
-			}
-			if (rsnLC.endsWith("n")) {
-				return RID_STARTS_WITH_N + digits;
-			} else if (rsnLC.endsWith("s")) {
-				return RID_STARTS_WITH_S + digits;
-			}
-		}
-		throw new MTLog.Fatal("Unexpected route ID for %s!", gRoute.toStringPlus());
+	public boolean defaultRouteIdEnabled() {
+		return true;
 	}
 
-	private static final String _SLASH_ = " / ";
-
-	@NotNull
-	@SuppressWarnings("DuplicateBranchesInSwitch")
 	@Override
-	public String getRouteLongName(@NotNull GRoute gRoute) {
-		String routeLongName = gRoute.getRouteLongNameOrDefault();
-		if (StringUtils.isEmpty(routeLongName)) {
-			routeLongName = gRoute.getRouteDescOrDefault(); // using route description as route long name
-		}
-		if (StringUtils.isEmpty(routeLongName)) {
-			if (CharUtils.isDigitsOnly(gRoute.getRouteShortName())) {
-				int rsn = Integer.parseInt(gRoute.getRouteShortName());
-				switch (rsn) {
-				// @formatter:off
-				case 12: return "University" + _SLASH_ + "Downtown";
-				case 23: return "Mayor Magrath" + _SLASH_ + "Scenic"; // Counter Clockwise Loop
-				case 24: return "Mayor Magrath" + _SLASH_ + "Scenic"; // Clockwise
-				case 31: return "Legacy Rdg" + _SLASH_ + "Uplands";
-				case 32: return "Indian Battle"+_SLASH_+ "Columbia Blvd"; // Indian Battle Heights, Varsity Village
-				case 33: return "Heritage" + _SLASH_ + "West Highlands" ; // Ridgewood, Heritage, West Highlands
-				case 35: return "Copperwood"; // Copperwood
-				case 36: return "Sunridge"; // Sunridge, Riverstone, Mtn Hts
-				case 37: return "Garry Station"; //
-				// @formatter:on
-				}
-			}
-			if ("20N".equalsIgnoreCase(gRoute.getRouteShortName())) {
-				return "North Terminal";
-			} else if ("20S".equalsIgnoreCase(gRoute.getRouteShortName())) {
-				return "South Enmax";
-			} else if ("21N".equalsIgnoreCase(gRoute.getRouteShortName())) {
-				return "Nord-Bridge";
-			} else if ("21S".equalsIgnoreCase(gRoute.getRouteShortName())) {
-				return "Henderson Lk" + _SLASH_ + "Industrial";
-			} else if ("22N".equalsIgnoreCase(gRoute.getRouteShortName())) {
-				return "North Terminal"; // 22 North
-			} else if ("22S".equalsIgnoreCase(gRoute.getRouteShortName())) {
-				return "South Gate"; //
-			}
-			throw new MTLog.Fatal("Unexpected route long name for %s!", gRoute);
-		}
-		return CleanUtils.cleanLabel(routeLongName);
+	public boolean useRouteShortNameForRouteId() {
+		return true;
+	}
+
+	@Override
+	public boolean defaultRouteLongNameEnabled() {
+		return true;
+	}
+
+	@Override
+	public boolean defaultAgencyColorEnabled() {
+		return true;
 	}
 
 	private static final String AGENCY_COLOR_BLUE_LIGHT = "009ADE"; // BLUE LIGHT (from web site CSS)
@@ -135,21 +82,15 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 
 	@Nullable
 	@Override
-	public String getRouteColor(@NotNull GRoute gRoute) {
-		if ("20S".equalsIgnoreCase(gRoute.getRouteShortName())) {
-			if ("80FF00".equalsIgnoreCase(gRoute.getRouteColor())) { // too light
-				return "81CC2B"; // darker (from PDF schedule)
-			}
-		} else if ("32".equalsIgnoreCase(gRoute.getRouteShortName())) {
-			if ("73CFFF".equalsIgnoreCase(gRoute.getRouteColor())) { // too light
-				return "76AFE3"; // darker (from PDF schedule)
-			}
-		} else if ("36".equalsIgnoreCase(gRoute.getRouteShortName())) {
-			if ("80FF80".equalsIgnoreCase(gRoute.getRouteColor())) { // too light
-				return "4DB8A4"; // darker (from PDF schedule)
-			}
+	public String fixColor(@Nullable String color) {
+		if ("80FF00".equalsIgnoreCase(color)) { // too light
+			return "81CC2B"; // darker (from PDF schedule)
+		} else if ("73CFFF".equalsIgnoreCase(color)) { // too light
+			return "76AFE3"; // darker (from PDF schedule)
+		} else if ("80FF80".equalsIgnoreCase(color)) { // too light
+			return "4DB8A4"; // darker (from PDF schedule)
 		}
-		return super.getRouteColor(gRoute);
+		return super.fixColor(color);
 	}
 
 	@Override
@@ -160,9 +101,9 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 	@Override
 	public boolean directionSplitterEnabled(long routeId) {
 		//noinspection RedundantIfStatement
-		if (routeId == 20L + RID_STARTS_WITH_N // 20N
-				|| routeId == 22L + RID_STARTS_WITH_N // 22N
-				|| routeId == 22L + RID_STARTS_WITH_S // 22S
+		if (routeId == 20L + 14L * MRouteSNToIDConverter.PREVIOUS // 20N
+				|| routeId == 22L + 14L * MRouteSNToIDConverter.PREVIOUS // 20N
+				|| routeId == 22L + 19L * MRouteSNToIDConverter.PREVIOUS // 20N
 		) {
 			return true; // OVERRIDE provided direction_id INVALID (used for "via " / trip variation)
 		}
