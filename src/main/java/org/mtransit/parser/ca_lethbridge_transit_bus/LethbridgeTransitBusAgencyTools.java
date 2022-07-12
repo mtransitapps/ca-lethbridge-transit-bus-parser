@@ -94,11 +94,6 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 	}
 
 	@Override
-	public boolean directionSplitterEnabled() {
-		return true;
-	}
-
-	@Override
 	public boolean directionSplitterEnabled(long routeId) {
 		//noinspection RedundantIfStatement
 		if (routeId == 20L + 14L * MRouteSNToIDConverter.PREVIOUS // 20N
@@ -107,7 +102,7 @@ public class LethbridgeTransitBusAgencyTools extends DefaultAgencyTools {
 		) {
 			return true; // OVERRIDE provided direction_id INVALID (used for "via " / trip variation)
 		}
-		return false;
+		return super.directionSplitterEnabled(routeId);
 	}
 
 	@Override
